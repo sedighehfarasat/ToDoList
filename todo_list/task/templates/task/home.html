@@ -5,6 +5,7 @@
       <thead>
         <tr>
           <td><center>Items</center></td>
+          <td><center>Edit</center></td>
           <td><center>Done</center></td>
           <td><center>Delete</center></td>
         </tr>
@@ -14,15 +15,17 @@
           {% if task.is_completed %}
             <tr class="table-secondary">
               <td class="striker"><center><a href="{% url 'task-detail' task.id %}">{{ task.title }}</a></center></td>
+              <td class="striker"><center><a href="{% url 'task-update' task.id %}">Edit</a></center></td>
               <td><center><a href="#">Uncross</a></center></td>
-              <td><center><a href="#">Delete</a></center></td>
+              <td><center><a href="{% url 'task-delete' task.id %}">Delete</a></center></td>
               <br/>
             <tr/>
           {% else %}
             <tr>
               <td><center><a href="{% url 'task-detail' task.id %}">{{ task.title }}</a></center></td>
+              <td><center><a href="{% url 'task-update' task.id %}">Edit</a></center></td>
               <td><center><a href="#">Cross off</a></center></td>
-              <td><center><a href="#">Delete</a></center></td>
+              <td><center><a href="{% url 'task-delete' task.id %}">Delete</a></center></td>
               <br/>
             <tr/>
           {% endif %}
