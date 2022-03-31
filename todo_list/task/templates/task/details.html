@@ -1,10 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-
-</body>
-</html>
+{% extends 'task/base.html' %}
+{% block content %}
+    <h1>Task Details</h1>
+    {% if task %}
+    <table class="table table-dark table-hover">
+      <tbody>
+        <tr>
+          <td><center><a href="#">{{ task.title }}</a></center></td>
+          <br/>
+        <tr/>
+        <tr>
+          <td><center><a href="#">{{ task.description }}</a></center></td>
+          <br/>
+        <tr/>
+        <tr>
+          <td><center><a href="#">{{ task.created_date }}</a></center></td>
+          <br/>
+        <tr/>
+      </tbody>
+    </table>
+    {% endif %}
+{% endblock %}
