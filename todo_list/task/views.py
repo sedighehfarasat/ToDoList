@@ -14,6 +14,12 @@ class TaskListView(LoginRequiredMixin, ListView):
         context['title'] = 'Home'
         context['tasks'] = context['tasks'].filter(user=self.request.user)
         context['count'] = context['tasks'].filter(is_completed=False).count()
+
+        search_input = self.request.GET.get('search-item') or ''
+        if search_input:
+            context['tasks'] = context['tasks'].filter(title__icontains=search_input)
+
+        context['search_input'] = search_input
         return context
 
 
