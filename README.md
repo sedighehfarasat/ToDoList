@@ -9,3 +9,7 @@ It is a To do List web app. Each user should register to the app and then she ca
 
 * [Django](https://www.djangoproject.com/)
 * [Bootstrap](https://getbootstrap.com)
+
+## Contact
+
+Sedigheh Farasat - sd.farasat@gmail.com
